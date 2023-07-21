@@ -9,16 +9,22 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
-		// 	 if (arr.length < 2) {
-  //   return "Array should have at least two elements to find the second highest.";
-  // }
+		 // Edge cases: Empty array or array with only 1 element
+            if (arr.length < 2) {
+                return -Infinity;
+            }
 
-  // // Sort the array in descending order
-  arr.sort((a, b) => b - a);
+            // Check if all elements in the array are the same
+            const uniqueElements = new Set(arr);
+            if (uniqueElements.size === 1) {
+                return -Infinity;
+            }
 
-  // Return the second element (which is the second highest)
-  return arr[1];
+            // Sort the array in descending order
+            arr.sort((a, b) => b - a);
+
+            // Return the second element (which is the second highest)
+            return arr[1];
 			
 		}
 
